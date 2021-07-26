@@ -21,3 +21,12 @@
   width: 450px;
   height: 25px;
 }
+
+.search-btn {
+  margin: 10px 0;
+  color: white;
+  background: black;
+  padding: 8px 24px;
+  font-size: 12px;
+  border-style: none;
+}
