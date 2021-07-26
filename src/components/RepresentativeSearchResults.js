@@ -8,7 +8,6 @@ function RepresentativeSearchResults(props) {
         <div>
             {offices.map(office => {
                 const official = officials[office.officialIndices[0]]
-                const address = official?.address && official?.address[0]
                 return ( 
                 <div className="representative-info">
                     <div className="office-title" >
@@ -23,14 +22,39 @@ function RepresentativeSearchResults(props) {
                         </span>
                     </label>
                     <br />
-                    <label>Address:&nbsp;
-                        <span>
-                            {address?.line1},
-                            &nbsp;{address?.city},
-                            &nbsp;{address?.state},
-                            &nbsp;{address?.zip}
-                        </span>
-                    </label>
+                    {official?.address && 
+                        <>
+                            <label>Address:&nbsp;
+                                <span>
+                                    {official?.address[0]?.line1},
+                                    &nbsp;{official?.address[0]?.city},
+                                    &nbsp;{official?.address[0]?.state},
+                                    &nbsp;{official?.address[0]?.zip}
+                                </span>
+                            </label>
+                            <br />
+                        </>
+                    }
+                    {official?.emails && 
+                        <>
+                            <label>Emails:&nbsp;
+                                <span>
+                                    {official?.emails[0]}
+                                </span>
+                            </label>
+                            <br/>
+                        </>
+                    }
+                    {official?.urls && 
+                        <>
+                            <label>Webiste:&nbsp;
+                                <a href={official?.urls[0]} target="_blank">
+                                    {official.urls[0]}
+                                </a>
+                            </label>
+                            <br/>
+                        </>
+                    }
                 </div>
                 )}
             )}
