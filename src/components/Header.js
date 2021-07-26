@@ -1,6 +1,6 @@
 function Header(){
     return (
-        <div>Representative Finder</div>
+        <h1 className="header" >Representative Finder</h1>
     )   
 }
 
