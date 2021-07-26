@@ -8,7 +8,9 @@ function App() {
   return (
     <div className="main-page">
       <Header />
+      <div style={{minHeight: "100vh"}}>
       <RepresentativeSearch />
+      </div>
       <Footer />
     </div>
   );
