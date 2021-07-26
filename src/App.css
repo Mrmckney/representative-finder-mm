@@ -31,3 +31,13 @@
   font-size: 12px;
   border-style: none;
 }
+
+.representative-info {
+  margin: 15px 0;
+
+}
+
+.office-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}

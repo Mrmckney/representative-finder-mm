@@ -1,7 +1,17 @@
-function RepresentativeSearchResults() {
+function RepresentativeSearchResults(props) {
+    
+    const {offices, officials} = props
+
+
     return (
         <div>
-            RepresentativeSearchResults
+            {offices.map(office => 
+                <div className="representative-info">
+                    <div className="office-title" >{office.name}</div>
+                    <p>{officials[office.officialIndices[0]]?.name}</p>
+                </div>
+            )}
+
         </div>
     )
 }
