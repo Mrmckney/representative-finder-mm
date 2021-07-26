@@ -6,7 +6,7 @@ import RepresentativeSearch from './components/RepresentativeSearch'
 
 function App() {
   return (
-    <div>
+    <div className="main-page">
       <Header />
       <RepresentativeSearch />
       <Footer />
