@@ -17,9 +17,9 @@ function RepresentativeSearchResults(props) {
                         {official?.name}
                     </p>
                     <label>Phone:&nbsp;
-                        <span>
+                        <a href={`tel:${official?.phones[0]}`}>
                             {official?.phones[0]}
-                        </span>
+                        </a>
                     </label>
                     <br />
                     {official?.address && 
@@ -38,9 +38,9 @@ function RepresentativeSearchResults(props) {
                     {official?.emails && 
                         <>
                             <label>Emails:&nbsp;
-                                <span>
+                                <a href={`mailto:${official?.emails[0]}`}>
                                     {official?.emails[0]}
-                                </span>
+                                </a>
                             </label>
                             <br/>
                         </>
