@@ -3,22 +3,68 @@
 *::before{
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
+
 
 .header {
   /* margin-left: 24px; */
-  background-color: maroon;
   padding: 24px;
   color: white;
+  background: #ad1211;
+}
+
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  align-items: flex-start;
+}
+
+
+.menu-item a{
+  color: white;
+  font-size: 26px;
+  margin-right: 24px;
+  text-decoration: none;
+}
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 24px;
+}
+
+.form-label {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 16px;
+  float: right;
+}
+
+.form-input {
+  height: 35px;
+  min-width: 300px;
+  font-size: 30px;
+  margin: 8px;
 }
 
 .footer {
   text-align: center;
 }
 
+
 .search-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
+
 
 .search-bar {
   margin-top: 24px;
@@ -29,7 +75,8 @@
   border-radius: 5px;
 }
 
-.search-btn {
+
+.submit-btn {
   margin: 10px 0;
   color: white;
   background: navy;
@@ -41,9 +88,11 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+
 .representative-info {
   margin: 20px 0;
 }
+
 
 .office-title {
   font-weight: bold;
@@ -51,9 +100,11 @@
   padding: 10px;
 }
 
+
 .official-name {
   padding: 10px;
 }
+
 
 a {
   text-decoration: none;
