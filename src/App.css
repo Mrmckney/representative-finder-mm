@@ -1,22 +1,18 @@
-/* *,
+*,
 *::after,
 *::before{
   margin: 0;
   padding: 0;
-} */
+}
 
 .main-page {
-  background: rgb(255,0,0);
-  background: linear-gradient(90deg, 
-  rgba(255,0,0,1) 6%, 
-  rgba(235,235,235,1) 35%, 
-  rgba(255,255,255,1) 65%, 
-  rgba(0,24,255,1) 100%);
 }
 
 .header {
-  margin-left: 24px;
-  /* padding: 20px; */
+  /* margin-left: 24px; */
+  background-color: maroon;
+  padding: 24px;
+  color: white;
 }
 
 .footer {
@@ -28,6 +24,7 @@
 }
 
 .search-bar {
+  margin-top: 24px;
   width: 500px;
   height: 40px;
   font-size: 25px;
@@ -38,12 +35,13 @@
 .search-btn {
   margin: 10px 0;
   color: white;
-  background: black;
-  padding: 8px 24px;
-  font-size: 12px;
+  background: navy;
+  padding: 15px 35px;
+  font-size: 16px;
   border-style: solid;
   border-color: lightgray;
   border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .representative-info {
@@ -53,8 +51,14 @@
 .office-title {
   font-weight: bold;
   text-transform: uppercase;
+  padding: 10px;
+}
+
+.official-name {
+  padding: 10px;
 }
 
 a {
   text-decoration: none;
 }
+

@@ -13,7 +13,7 @@ function RepresentativeSearchResults(props) {
                     <div className="office-title" >
                         {office.name}
                     </div>
-                    <p>
+                    <p className="official-name">
                         {official?.name}
                     </p>
                     <label>Phone:&nbsp;

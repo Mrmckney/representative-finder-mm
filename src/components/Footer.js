@@ -1,6 +1,6 @@
 function Footer() {
     return(
-        <p className="footer" >Made by Matt</p>
+        <p className="footer" >&copy; Matthew McKney</p>
     )
 }
 
