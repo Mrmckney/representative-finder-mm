@@ -14,6 +14,10 @@
   background: #ad1211;
 }
 
+.header-title {
+  font-weight: bold;
+}
+
 
 ul {
   display: flex;

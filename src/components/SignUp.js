@@ -1,8 +1,8 @@
 import {useState} from 'react'
 
 function SignUp() {
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const signUpUser = (e) => {
         e.preventDefault()
@@ -11,6 +11,7 @@ function SignUp() {
 
     return(
         <div className="sign-up-container">
+            <h1>Sign Up</h1>
             <form onSubmit={(e) => signUpUser(e)}>
                 <label className="form-label">
                     Email:&nbsp;

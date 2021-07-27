@@ -23,6 +23,7 @@ function RepresentativeSearch() {
 
     return (
         <div className="search-container" >
+            <h1>Search Representatives</h1>
             <input 
                 name="representativeSearch" 
                 type="text"
