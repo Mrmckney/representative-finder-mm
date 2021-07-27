@@ -6,11 +6,6 @@
   box-sizing: inherit;
 }
 
-.back {
-  background-image: url(./image/flag.jpeg);
-  height: 100vh;
-
-}
 
 .home-text {
   text-align: center;
@@ -18,6 +13,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: black;
 }
+
 
 .home-par {
   padding: 10px;
@@ -31,6 +27,7 @@
   color: white;
   background: #ad1211;
 }
+
 
 .header-title {
   font-weight: bold;
@@ -52,6 +49,7 @@ ul {
   text-decoration: none;
 }
 
+
 .sign-up-container {
   display: flex;
   flex-direction: column;
@@ -59,6 +57,7 @@ ul {
   align-items: center;
   margin: 24px;
 }
+
 
 .form-label {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -68,12 +67,14 @@ ul {
   float: right;
 }
 
+
 .form-input {
   height: 35px;
   min-width: 300px;
   font-size: 30px;
   margin: 8px;
 }
+
 
 .footer {
   text-align: center;
@@ -89,6 +90,7 @@ ul {
   align-items: center;
 }
 
+
 .search-container > h1 {
   margin: 12px;
 }
@@ -101,6 +103,7 @@ ul {
   font-size: 25px;
   border-style: solid;
   border-radius: 5px;
+  
 }
 
 

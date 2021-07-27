@@ -25,7 +25,7 @@ function RepresentativeSearch({ user }) {
 
     return (
         <div className="search-container" >
-            <h1>Search Representatives</h1>
+            <h1>Search Representatives by Address</h1>
             <input 
                 name="representativeSearch" 
                 type="text"
