@@ -7,10 +7,13 @@ import RepresentativeSearch from './components/RepresentativeSearch'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import Home from './components/Home'
+import UserProfile from './components/UserProfile'
 
 
 function App() {
-  const [user, setUser] = useState()
+
+  const [user, setUser] = useState('')
+
   return (
     <Router>
       <div>
@@ -28,6 +31,9 @@ function App() {
                     ? <RepresentativeSearch user={user} />
                     : <SignIn setUser={setUser} />
                   } 
+                </Route>
+                <Route>
+                    <UserProfile path="/user-profile"/>
                 </Route>
                 <Route path="/">
                     <Home />
