@@ -22,7 +22,6 @@
 
 
 .header {
-  /* margin-left: 24px; */
   padding: 24px;
   color: white;
   background: #ad1211;
@@ -48,6 +47,7 @@ ul {
   margin-right: 24px;
   text-decoration: none;
 }
+
 
 
 .sign-up-container {
@@ -140,4 +140,6 @@ ul {
 a {
   text-decoration: none;
 }
+
+
 
