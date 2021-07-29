@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function UserProfile({ user }) {
 
@@ -7,16 +7,17 @@ function UserProfile({ user }) {
     const [address, setAddress] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const createUser = (e) => {
+    
+
+    const updateUser = (e) => {
         e.preventDefault()
         const formValues = {
             firstName: firstName,
             lastName: lastName,
             address: address,
-            email: user.email
         }
         fetch('https://representative-finder-mm-api.web.app/users', {
-            method: 'POST',
+            method: 'PATCH',
             body: JSON.stringify(formValues),
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
@@ -28,7 +29,7 @@ function UserProfile({ user }) {
     return(
         <div className="sign-up-container">
             <h1 className="page-title">User Profile</h1>
-            <form onSubmit={(e) => createUser(e) }>
+            <form onSubmit={(e) => updateUser(e) }>
                 <label className="form-label">
                     First Name:&nbsp;
                     <input

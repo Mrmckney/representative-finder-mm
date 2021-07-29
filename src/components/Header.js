@@ -2,13 +2,17 @@ import {Link} from "react-router-dom"
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-function Header({ setUser }){
+function Header({user, setUser, setUserProfile }){
 
     const logOut = (e) => {
         e.preventDefault()
         firebase.auth()
         .signOut()
-        .then(() => setUser(undefined))
+        .then(() => {
+            localStorage.removeItem('user')
+            setUser(undefined)
+            setUserProfile(undefined)
+        })
         .catch(err => alert(err))
     }
 
@@ -25,26 +29,29 @@ function Header({ setUser }){
                         Search
                     </Link>
                 </li>
+                {!user && 
                 <li className="menu-item">
                     <Link to="/signup">
                         Sign Up
                     </Link>
-                </li>
+                </li>}
+                {!user && 
                 <li className="menu-item">
                     <Link to="/signin">
                         Sign In
                     </Link>
-                </li>
+                </li>}
+                {user && 
                 <li className="menu-item">
                     <a onClick={(e) => logOut(e)}>
                         Logout
                     </a>
-                </li>
-                <li className="menu-item">
+                </li>}
+                {user && <li className="menu-item">
                     <Link to="user-profile">
                         User Profile
                     </Link>
-                </li>
+                </li>}
             </ul>
         </div>
     )   

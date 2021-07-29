@@ -8,6 +8,26 @@ function SignUp({ setUser }) {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const createUser = () => {
+        const formValues = {
+            email: email
+        }
+        fetch('https://representative-finder-mm-api.web.app/users', {
+            method: 'POST',
+            body: JSON.stringify(formValues),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log('json -->', json)
+            setLoading(false)
+        })
+        .catch(err => {
+            alert(err)
+            setLoading(false)
+        })
+    }
+
     const signUpUser = (e) => {
         e.preventDefault()
         setLoading(true)
@@ -17,8 +37,9 @@ function SignUp({ setUser }) {
         }
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(response => {
-                setLoading(false)
+                
                 setUser(response.user)
+                return createUser()
             })
             .catch(err => {
                 alert(err.message)
