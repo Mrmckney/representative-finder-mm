@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-function Header({user, setUser, setUserProfile }){
+function Header({user, userProfile, setUser, setUserProfile }){
 
     const logOut = (e) => {
         e.preventDefault()
@@ -47,8 +47,9 @@ function Header({user, setUser, setUserProfile }){
                         Logout
                     </a>
                 </li>}
-                {user && <li className="menu-item">
-                    <Link to="user-profile">
+                {user && userProfile && 
+                <li className="menu-item">
+                    <Link to="/user-profile">
                         User Profile
                     </Link>
                 </li>}

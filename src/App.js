@@ -48,7 +48,7 @@ function App() {
   return (
     <Router>
       <div>
-          <Header user={user} setUser={setUser} setUserProfile={setUserProfile} />
+          <Header user={user} userProfile={userProfile} setUser={setUser} setUserProfile={setUserProfile} />
             <div style={{minHeight: "100vh"}}>
               <Switch>
                 <Route path="/signin">
@@ -64,7 +64,7 @@ function App() {
                   } 
                 </Route>
                 <Route path="/user-profile">
-                    <UserProfile user={user}/>
+                    <UserProfile user={user} userProfile={userProfile} setUserProfile={setUserProfile}/>
                 </Route>
                 <Route path="/">
                     <Home />

@@ -1,13 +1,30 @@
 import { useState, useEffect } from 'react'
 
-function UserProfile({ user }) {
+function UserProfile({ user, userProfile, setUserProfile }) {
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [address, setAddress] = useState('')
     const [loading, setLoading] = useState(false)
 
-    
+    useEffect(() => {
+        if(userProfile !== undefined){
+            setFirstName(userProfile.firstName)
+            setLastName(userProfile.lastName)
+            setAddress(userProfile.address)
+        }
+    }, [userProfile])
+
+    const getUser = () => {
+        fetch(`https://representative-finder-mm-api.web.app/users/${user?.email}`)
+        .then(response => response.json())
+        .then(json => {
+          console.log('user json -->', json)
+          setUserProfile(json.data)
+          localStorage.setItem('user', JSON.stringify(json.data))
+        })
+        .catch(err => alert(err))
+    }
 
     const updateUser = (e) => {
         e.preventDefault()
@@ -16,13 +33,16 @@ function UserProfile({ user }) {
             lastName: lastName,
             address: address,
         }
-        fetch('https://representative-finder-mm-api.web.app/users', {
+        fetch(`https://representative-finder-mm-api.web.app/users/${userProfile.id}`, {
             method: 'PATCH',
             body: JSON.stringify(formValues),
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
         .then(response => response.json())
-        .then(json => console.log('json -->', json))
+        .then(json => {
+            console.log('json -->', json)
+            getUser()
+        })
         .catch(err => alert(err))
     }
 
