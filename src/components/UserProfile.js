@@ -1,16 +1,34 @@
 import { useState } from 'react'
 
-function UserProfile() {
+function UserProfile({ user }) {
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [address, setAddress] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const createUser = (e) => {
+        e.preventDefault()
+        const formValues = {
+            firstName: firstName,
+            lastName: lastName,
+            address: address,
+            email: user.email
+        }
+        fetch('https://representative-finder-mm-api.web.app/users', {
+            method: 'POST',
+            body: JSON.stringify(formValues),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+        .then(response => response.json())
+        .then(json => console.log('json -->', json))
+        .catch(err => alert(err))
+    }
+
     return(
         <div className="sign-up-container">
             <h1 className="page-title">User Profile</h1>
-            <form>
+            <form onSubmit={(e) => createUser(e) }>
                 <label className="form-label">
                     First Name:&nbsp;
                     <input

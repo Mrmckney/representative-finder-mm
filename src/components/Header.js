@@ -1,6 +1,17 @@
 import {Link} from "react-router-dom"
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
-function Header(){
+function Header({ setUser }){
+
+    const logOut = (e) => {
+        e.preventDefault()
+        firebase.auth()
+        .signOut()
+        .then(() => setUser(undefined))
+        .catch(err => alert(err))
+    }
+
     return (
         <div className="header">
             <ul>
@@ -25,7 +36,12 @@ function Header(){
                     </Link>
                 </li>
                 <li className="menu-item">
-                    <Link to="/user-profile">
+                    <a onClick={(e) => logOut(e)}>
+                        Logout
+                    </a>
+                </li>
+                <li className="menu-item">
+                    <Link to="user-profile">
                         User Profile
                     </Link>
                 </li>
