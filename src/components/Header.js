@@ -18,7 +18,7 @@ function Header({user, userProfile, setUser, setUserProfile }){
 
     return (
         <div className="header">
-            <ul>
+            <ul className="header-list">
                 <li className="header-title">
                     <Link to="/">
                         Representative Finder

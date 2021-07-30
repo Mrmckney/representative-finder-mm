@@ -38,9 +38,8 @@
 }
 
 
-ul {
+.header-list {
   display: flex;
-  justify-content: flex-start;
   list-style-type: none;
   align-items: flex-start;
 }
@@ -131,6 +130,7 @@ ul {
   display: flex;
   flex-direction: column;
   margin: 20px 0;
+  padding: 20px 0;
 }
 
 
@@ -138,12 +138,12 @@ ul {
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 
 .official-name {
-  padding: 10px;
+  padding: 10px 0;
   text-transform: uppercase;
   font-weight: 500;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import firebase from 'firebase'
 import { firebaseConfig } from './config'
@@ -14,6 +14,8 @@ import './App.css'
 if(!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig)
 }
+
+export const UserContext = createContext(undefined)
 
 function App() {
 
@@ -48,6 +50,7 @@ function App() {
   return (
     <Router>
       <div>
+        <UserContext.Provider value={{userProfile}}>
           <Header user={user} userProfile={userProfile} setUser={setUser} setUserProfile={setUserProfile} />
             <div style={{minHeight: "100vh"}}>
               <Switch>
@@ -72,6 +75,7 @@ function App() {
               </Switch>
             </div>
           <Footer />
+        </UserContext.Provider>
       </div>
     </Router>
   );
