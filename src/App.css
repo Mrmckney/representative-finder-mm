@@ -28,8 +28,13 @@
 }
 
 
-.header-title {
+.header-title a{
   font-weight: bold;
+  color: white;
+  font-size: 32px;
+  margin-right: 24px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
@@ -43,12 +48,11 @@ ul {
 
 .menu-item a{
   color: white;
-  font-size: 26px;
+  font-size: 20px;
   margin-right: 24px;
   text-decoration: none;
   cursor: pointer;
 }
-
 
 
 .sign-up-container {
